@@ -1,0 +1,11 @@
+[
+  {
+    "op": "replace",
+    "file": "game:blocktypes/metal/verticalboiler.json",
+    "path": "/attributes/liquidContainerProps",
+    "value": {
+      "capacityLitres": 30,
+      "canHold": ["game:waterportion", "coffee:coffeeportion"]
+    }
+  }
+]

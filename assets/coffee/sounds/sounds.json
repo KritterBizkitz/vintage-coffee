@@ -1,0 +1,7 @@
+{
+  "drink": {
+    "base": "sounds/drink.ogg",
+    "volume": 1.0,
+    "pitch": 1.0
+  }
+}

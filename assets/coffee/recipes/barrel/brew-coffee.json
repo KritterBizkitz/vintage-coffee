@@ -1,0 +1,9 @@
+{
+	"code": "brew-coffee",
+	"sealHours": 24,
+	"ingredients": [
+		{ "type": "item", "code": "game:waterportion", "litres": 10 },
+		{ "type": "item", "code": "coffee:coffee-grounds", "quantity": 10 }
+	],
+	"output": { "type": "item", "code": "coffee:coffeeportion", "litres": 10 }
+}

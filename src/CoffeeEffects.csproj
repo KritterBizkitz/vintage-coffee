@@ -1,34 +1,32 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net7.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<AssemblyName>CoffeeEffects</AssemblyName>
-		<LangVersion>latest</LangVersion>
 		<Nullable>enable</Nullable>
-
-		<!-- predictable build output -->
+		<ImplicitUsings>enable</ImplicitUsings>
 		<OutputPath>..\dist\build\</OutputPath>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<RootNamespace>CoffeeMod</RootNamespace>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<!-- Core API -->
+		<Reference Include="Newtonsoft.Json">
+		  <HintPath>..\..\..\Users\james\AppData\Roaming\Vintagestory\Lib\Newtonsoft.Json.dll</HintPath>
+		</Reference>
 		<Reference Include="VintagestoryAPI">
 			<HintPath>$(AppData)\Vintagestory\VintagestoryAPI.dll</HintPath>
 			<Private>false</Private>
-			<!-- don't copy local -->
 		</Reference>
-
-		<!-- Survival content (ItemMeal etc.) -->
-		<Reference Include="Vintagestory.GameContent">
-			<HintPath>$(AppData)\Vintagestory\Mods\VSSurvivalMod.dll</HintPath>
+		<Reference Include="VintagestoryLib">
+			<HintPath>$(AppData)\Vintagestory\VintagestoryLib.dll</HintPath>
 			<Private>false</Private>
+		</Reference>
+		<Reference Include="VSSurvivalMod">
+		  <HintPath>..\..\..\Users\james\AppData\Roaming\Vintagestory\Mods\VSSurvivalMod.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 
-	<!-- After build, drop DLL next to modinfo.json so the game loads it -->
 	<Target Name="CopyDllToRepoRoot" AfterTargets="Build">
-		<Copy SourceFiles="$(TargetPath)"
-			  DestinationFolder="$(ProjectDir)..\"
-			  SkipUnchangedFiles="true" />
+		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ProjectDir)..\" SkipUnchangedFiles="true" />
 	</Target>
 </Project>

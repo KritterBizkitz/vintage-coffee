@@ -11,11 +11,11 @@
   },
   {
     "code": "item-coffee-grounds",
-    "text": "Ground roasted coffee beans. Use these in a cooking pot to brew coffee.",
+    "text": "Ground roasted coffee beans. Use these in a barrel. 10 Litres of water and 10 Coffee grounds will make 2 litres of coffee.",
     "showinhandbook": true
   },
   {
-    "code": "meal-brew-coffee",
+    "code": "coffeeportion",
     "text": "A hot drink brewed from roasted coffee grounds. Restores satiety and gives you energy.",
     "showinhandbook": true
   },

@@ -1,0 +1,7 @@
+{
+  "pageCode": "coffee:beansbrewing",
+  "title": "coffee:hb-beans-title",
+  "text": "coffee:hb-beans-text",
+  "categoryCode": "coffee:category",
+  "icon": { "type": "item", "code": "coffee:coffeeportion" }
+}

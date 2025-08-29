@@ -1,0 +1,11 @@
+{
+  "liquids": [
+    {
+      "code": "coffeeportion",
+      "texture": "textures/block/liquid/coffeeportion.png",
+      "viscosity": 0.2,
+      "level": 0.85,
+      "flow": false
+    }
+  ]
+}

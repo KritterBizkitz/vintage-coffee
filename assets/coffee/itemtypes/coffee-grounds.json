@@ -4,11 +4,6 @@
   "maxstacksize": 64,
   "creativeinventory": { "general": [ "*" ] },
 
- "nutritionProps": {
-    "satiety": 80,
-    "foodCategory": "vegetable",
-    "health": 0
-  },
 
 
   "textures": { "all": { "base": "coffee:item/coffee-grounds" } }

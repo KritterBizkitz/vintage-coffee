@@ -1,0 +1,108 @@
+{
+  "code": "tankard", 
+  "class": "BlockLiquidContainerTopOpened",
+  "creativeinventory": 
+  {
+    "general": [ "tankard" ]
+	},
+
+  "shape": {
+	"base": "coffee:shapes/block/tankard"
+  },
+
+  "creativeinventoryStacks": [
+  {
+    "tabs": ["liquids"],
+    "stacks": [
+      { "type": "block", "code": "coffee:tankard" },
+
+      {
+        "type": "block",
+        "code": "coffee:tankard",
+        "attributes": {
+          "ucontents": [
+            { "type": "item", "code": "coffee:coffeeportion", "stacksize": 1, "makefull": true }
+          ]
+        }
+      }
+    ]
+  }
+],
+
+  
+	"behaviors": [
+	{ "name": "GroundStorable", "properties": { "layout": "Quadrants", "collisionBox": { "x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.125, "z2": 1
+	} } },
+	{ "name": "Unplaceable", "__comment": "The ground storable obsoletes this being a block. Should be an item, but is kept a block for backwards compatibility"
+	},
+	{ "name": "RightClickPickup"
+	},
+	
+	{
+	  "name": "MilkingContainer"
+	}
+	],
+
+  "blockmaterial": "Wood",
+  "maxStackSize": 4,
+  "replaceable": 0,
+  "resistance": 0.75,
+  "liquidSelectable": 1,
+
+  	"guiTransform": 
+	{
+	"origin": { "x": 0.5, "y": 0.25, "z": 0.5 },
+	"rotation": { "x": -12, "y": -100, "z": 12 },
+	"scale": 2.4
+	},	
+  	"tpHandTransform": 
+	{
+	"translation": { "x": -1.05, "y": -0.87, "z": -0.72 },
+	"rotation": { "x": 90, "y": -15, "z": -90 },
+	"scale": 0.7
+	},
+	"fpHandTransform": 
+	{
+	"scale": 0.7
+	},
+
+	"groundTransform": 
+	{
+	"scale": 3.5
+	},
+
+		"attributes": 
+	{
+		"groundStorageTransform": 
+		{
+			"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+			"scale": 0.85
+		},
+		"onDisplayTransform": 
+		{
+			"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+			"rotation": { "x": 0, "y": 90, "z": 0 },
+			"scale": 0.75
+		},		
+		"shelvable": true,
+		"liquidContainerProps": 
+		{
+				"capacityLitres": 0.25,
+				"transferSizeLitres": 0.25,
+				"emptyShapeLoc": "coffee:shapes/block/tankard",
+				"opaqueContentShapeLoc": "coffee:shapes/block/tankardliquidcontents",
+				"liquidContentShapeLoc": "coffee:shapes/block/tankardliquidcontents",
+				"liquidMaxYTranslate": 0.32,
+				"allowHeldLiquidTransfer": true,
+    "canHold": ["coffee:coffeeportion","game:waterportion"]
+		},
+
+	"sounds": {
+		"place": "game:block/planks",
+		"hit": "game:block/planks",
+		"break": "game:block/planks",
+		"walk": "game:walk/wood"
+	}		
+	}
+	
+}

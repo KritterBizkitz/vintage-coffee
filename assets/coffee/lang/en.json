@@ -9,6 +9,7 @@
 
 
   "meal-brew-coffee": "Brewed Coffee",
+  "block-tankard-wood": "Wooden Tankard",
 
   
   
@@ -22,8 +23,43 @@
   "coffee:grind-beans-text": "Put <i>Roasted Coffee Beans</i> into a <i>Quern</i> and grind them into <i>Coffee Grounds</i>. This works just like grinding flour.",
 
   "coffee:brew-coffee-title": "Brew Coffee",
-  "coffee:brew-coffee-text": "Add <i>Coffee Grounds</i> and <i>Water</i> into a <i>Cooking Pot</i> and heat until brewed. The result is <i>Brewed Coffee</i>, a hot drink that restores satiety and provides energy."
+  "coffee:brew-coffee-text": "Add <i>Coffee Grounds</i> and <i>Water</i> into a <i>Cooking Pot</i> and heat until brewed. The result is <i>Brewed Coffee</i>, a hot drink that restores satiety and provides energy.",
+
+  
+  "coffee:heat-coffee-title": "Heat Coffee in a Boiler",
+  "coffee:heat-coffee-text": "Place a <i>Vertical Boiler</i> directly above a lit <i>Firepit</i>. Pour in <i>Coffee</i> and watch its <b>Temperature</b> climb in the tooltip (hold <i>Shift</i>). Coffee stays hot when moved between containers.\n\n<b>Tips</b>\n• Boiler must sit <b>on top of</b> the heat source\n• Capacity is about 30 L (may vary by modpack)\n• Heating is gradual; draw off only what you need",
+
+  "coffee:containers-title": "Containers and Pouring",
+  "coffee:containers-text": "<b>Liquid behavior</b>: Coffee is a normal liquid portion item. It can be stored and transferred just like water.\n\n<b>Common containers</b>\n• <i>Barrel</i> — brew and bulk storage\n• <i>Bucket</i> — easy transfer to boiler\n• <i>Bowl</i> — sampling small amounts, visuals\n• <i>Tankard</i> — drinking vessel (accepts coffee)\n\n<b>Controls</b>\n• Right–click a source container with an empty receiver\n• Sneak–right–click often takes a <i>single portion</i>\n• Hover liquid stacks and hold <i>Shift</i> to see litres and temperature",
+
+  "coffee:growing-title": "Grow Coffee Bushes",
+  "coffee:growing-text": "Coffee bushes thrive in warm regions. Plant a <i>Coffee Bush Sapling</i> on tilled soil. Over time it progresses through growth stages.\n\n<b>Growth notes</b>\n• Needs time and suitable climate\n• Stages: empty → flowering → ripe\n• Harvest when <b>Ripe</b> to get cherries/beans (depending on your mod config)",
+
+  "coffee:harvest-title": "Harvest and Process",
+  "coffee:harvest-text": "When bushes are <b>Ripe</b>, harvest to obtain <i>Green Coffee Beans</i>.\n\n<b>Processing pipeline</b>\n1) <i>Roast</i> beans in a firepit or oven → <i>Roasted Beans</i>\n2) <i>Grind</i> roasted beans in a quern → <i>Coffee Grounds</i>\n3) <i>Brew</i> grounds + water in a barrel → <i>Coffee</i>\n4) <i>Heat</i> in a boiler (optional) → hot coffee",
+
+  "coffee:serving-title": "Serving and Effects",
+  "coffee:serving-text": "<b>Drinking</b>: Pour coffee into a <i>Tankard</i> (or your vessel mod) and drink.\n\n<b>Hot vs Cold</b>\n• Coffee keeps a <b>temperature</b> value\n• Hot coffee (for example ≥ 80 °C) can provide stronger warmth or stamina effects if your pack enables them\n• Cold coffee still restores satiety\n\n<b>Role-play</b>\n• Serve from the boiler for a camp kitchen vibe\n• Carry a bucket or tankard to share with friends",
+
+  "coffee:temperature-title": "Temperature Mechanics",
+  "coffee:temperature-text": "Coffee’s <b>temperature</b> rises in a boiler and is preserved when transferred. You can see it on any liquid stack’s tooltip (hold <i>Shift</i>).\n\n<b>Design details</b>\n• No recipe swap: the same <i>Coffee</i> item becomes hot by temperature alone\n• Your tankard or effect code can check <i>GetTemperature(…)</i> and apply a hot bonus\n• Temperature cools over time if removed from heat",
+
+  "coffee:troubleshooting-title": "Troubleshooting",
+  "coffee:troubleshooting-text": "<b>No coffee from barrel?</b>\n• Confirm the brew recipe and sealing time\n• Make sure you used <i>Coffee Grounds</i> (not beans)\n\n<b>Can’t pour?</b>\n• Use a container–to–container transfer (bucket or tankard)\n• Ensure your vessel is whitelisted to accept coffee\n\n<b>Boiler not heating?</b>\n• Boiler must sit <b>directly on</b> a lit firepit\n• Check that it accepts coffee in its <i>canHold</i> list\n\n<b>UI crash or white texture?</b>\n• Your liquid needs a surface texture: <i>contentTexture</i> in the item JSON\n• Names must be namespaced: <i>coffee:coffeeportion</i>, <i>game:bucket</i>",
+
+  "coffee:hb-bushes-title": "Coffee Bushes",
+  "coffee:hb-bushes-text": "<b>Habitat</b>\nCoffee bushes prefer warm wet regions. Expect them in tropical biomes or other hot climates depending on world settings. Server configs can shift exact spawn rules.\n\n<b>Growth</b>\nCoffee bushes advance through stages: <i>empty</i> → <i>flowering</i> → <i>ripe</i>. Ripe bushes can be harvested for beans. Flowering indicates the next stage is near.\n\n<b>Finding and planting</b>\n• Explore warm zones and river valleys\n• Replant any saplings you obtain to establish a local patch\n• Bushes regrow over time; check them periodically\n\n<b>Harvesting</b>\nAt the <i>ripe</i> stage harvest to obtain <i>Green Coffee Beans</i>. These are the start of the processing chain.\n\n<b>Tips</b>\n• If your world is colder than usual, look for lower elevations or sheltered valleys\n• Traders or loot may also supply beans or saplings depending on your pack",
+
+  "coffee:hb-beans-title": "Beans and Brewing",
+  "coffee:hb-beans-text": "<b>The three bean items</b>\n• <i>Green Coffee Beans</i> — harvested from bushes\n• <i>Roasted Coffee Beans</i> — made by roasting green beans in a firepit or oven\n• <i>Coffee Grounds</i> — made by grinding roasted beans in a quern\n\n<b>Path A: Cooking Pot brew</b> <i>(work in progress)</i>\nCombine <i>1 L Water</i> with <i>1 Coffee Grounds</i> in a <i>Cooking Pot</i> and heat until finished. The result is coffee served in a bowl. It is currently <i>eaten</i> rather than drunk but still provides its benefits.\n\n<b>Path B: Barrel brew</b> <i>(bulk method)</i>\nPlace <i>Water</i> and <i>Coffee Grounds</i> into a <i>Barrel</i> then seal for about 24 in-game hours. Use ratios like <i>10 L Water + 10 Grounds</i> up to <i>50 L Water + 50 Grounds</i>. The barrel yields <i>Coffee</i> as a liquid you can store and pour.\n\n<b>Heating</b>\nFresh barrel coffee is cold. To heat it:\n1) Place a <i>Vertical Boiler</i> directly on top of a lit <i>Firepit</i>\n2) Pour in coffee from a bucket or other vessel\n3) Hover the contents and hold <i>Shift</i> to see the <b>Temperature</b> rising\nCoffee keeps its temperature when moved to other containers.\n\n<b>Serving</b>\nPour hot coffee into a <i>Tankard</i> or another drink vessel supported by your modpack. Effects in recipes or code can read temperature to give a hot bonus.\n\n<b>Quick reference</b>\n• Green → roast → grind → brew\n• Cooking Pot: 1 L Water + 1 Grounds → bowl of coffee (WIP)\n• Barrel: 10 L Water + 10 Grounds up to 50 L + 50 Grounds → bulk coffee\n• Boiler warms coffee; same item becomes hot by temperature"
+
+
+
 }
+
+
+
+
 
 
 

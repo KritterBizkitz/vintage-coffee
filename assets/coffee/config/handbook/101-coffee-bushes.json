@@ -1,0 +1,7 @@
+{
+  "pageCode": "coffee:bushes",
+  "title": "coffee:hb-bushes-title",
+  "text": "coffee:hb-bushes-text",
+  "categoryCode": "coffee:category",
+  "icon": { "type": "block", "code": "coffee:coffeebush-coffee-ripe" }
+}

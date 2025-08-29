@@ -2,17 +2,12 @@
   "type": "code",
   "name": "Coffee",
   "modid": "coffee",
-  "version": "0.5.5",
-
-  "modicon": "modicon.jpg",
-
-
-  "side": "Universal",
+  "version": "0.9.0",
+    "side": "Universal",
   "description": "Coffee shrubs, beans, roasting & brewed coffee with warmth and a slower hunger drain.",
-  "iconpath": "modicon.jpg",
-  "authors": [ "KritterBizkit" ],
+    "authors": [ "KritterBizkit" ],
   "dependencies": {
-    "game": "1.20.12",
-    "survival": "1.20.12"
+    "game": "1.21.0",
+    "survival": "1.21.0"    
   }
 }

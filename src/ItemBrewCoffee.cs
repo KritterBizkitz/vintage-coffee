@@ -1,5 +1,3 @@
-using System;
-using System.Linq;
 using System.Reflection;
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
@@ -37,12 +35,12 @@ namespace CoffeeMod
             var a = slot.Itemstack?.Collectible?.Attributes;
 
             float instantDegrees = a?["coffeeInstantDegrees"].AsFloat(2.5f) ?? 2.5f;
-            float durationSec    = a?["coffeeDurationSec"].AsFloat(480f) ?? 480f;
-            float boostPerSec    = a?["coffeeBoostPerSec"].AsFloat(0.03f) ?? 0.03f;
+            float durationSec = a?["coffeeDurationSec"].AsFloat(480f) ?? 480f;
+            float boostPerSec = a?["coffeeBoostPerSec"].AsFloat(0.03f) ?? 0.03f;
 
-            float hungerMul      = a?["coffeeHungerMul"].AsFloat(0.9f) ?? 0.9f;
-            float hours          = a?["coffeeHungerHours"].AsFloat(3f) ?? 3f;
-            float baseSatPerHr   = a?["coffeeHungerSatPerHourBase"].AsFloat(60f) ?? 60f;
+            float hungerMul = a?["coffeeHungerMul"].AsFloat(0.9f) ?? 0.9f;
+            float hours = a?["coffeeHungerHours"].AsFloat(3f) ?? 3f;
+            float baseSatPerHr = a?["coffeeHungerSatPerHourBase"].AsFloat(60f) ?? 60f;
 
             // Instant warmth
             var tempBeh = GetBehaviorReflect(
@@ -66,11 +64,11 @@ namespace CoffeeMod
             var wattr = eplr.WatchedAttributes;
             double until = Math.Max(wattr.GetDouble("coffeeWarmthUntil", 0), now + durationSec);
             wattr.SetDouble("coffeeWarmthUntil", until);
-            wattr.SetFloat ("coffeeBoostPerSec", boostPerSec);
+            wattr.SetFloat("coffeeBoostPerSec", boostPerSec);
 
             wattr.SetDouble("coffeeHungerUntil", now + hours * 3600f);
-            wattr.SetFloat ("coffeeHungerMul", hungerMul);
-            wattr.SetFloat ("coffeeHungerBaseSatPerHr", baseSatPerHr);
+            wattr.SetFloat("coffeeHungerMul", hungerMul);
+            wattr.SetFloat("coffeeHungerBaseSatPerHr", baseSatPerHr);
         }
     }
 }
